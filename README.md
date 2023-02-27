@@ -1,7 +1,8 @@
 # IMPLEMENTACIÓN ROS MELODIC RASPBERRY PI 3.
 - [IMPLEMENTACIÓN ROS MELODIC RASPBERRY PI 3.](#implementación-ros-melodic-raspberry-pi-3)
-  - [1. INSTALACIÓN UBUNTU MATE 18.04.](#1-instalación-ubuntu-mate-1804)
-  - [2. INSTALACIÓN DE ROS.](#2-instalación-de-ros)
+  - [1. Instalación de Ubuntu Mate 18.04.](#1-instalación-de-ubuntu-mate-1804)
+  - [2. Instalación el servidor de escritorio remoto Xrdp.](#2-instalación-el-servidor-de-escritorio-remoto-xrdp)
+  - [3. Instalación de ROS.](#3-instalación-de-ros)
   
 La Raspberry Pi 3+ es una computadora de bajo costo. Compatible con varios sistemas operativos diferentes, lo que la hace ideal para una gran variedad de proyectos y usos. Ubuntu Mate (arquitectura armhf) es una distribución de Linux basada en Ubuntu que está diseñada específicamente para dispositivos de baja potencia como la Raspberry Pi. Al ser una distribución de Linux, Ubuntu Mate es compatible con ROS y proporciona un entorno de programación estable y confiable para la programación de robots.
 
@@ -15,7 +16,7 @@ Cabe mencionar que estas versiones **no son las ultimas disponibles** , si se re
 
 
 ---
-## 1. INSTALACIÓN UBUNTU MATE 18.04.
+## 1. Instalación de Ubuntu Mate 18.04.
 Materiales necesarios:
 * Memoria SD (min. 16 GB).
 * Computadora.
@@ -45,15 +46,19 @@ Inserta la tarjeta SD en tu computadora y abre Raspberry Pi Imager. Haz clic en 
 
 **1.4 Configurar la Raspberry Pi:**
 
-Después de finalizar el proceso anterior el programa te notificará cuando el proceso esté completado, inserta la tarjeta SD en la Raspberry Pi conecta la alimentación y a un monitor por medio del puerto HDMI. La Raspberry Pi debe arrancar desde la tarjeta SD y mostrar el instalador de Ubuntu Mate. Sigue las instrucciones en pantalla para completar la instalación de Ubuntu Mate en tu Raspberry Pi.
+Después de finalizar el proceso anterior el programa te notificará cuando el proceso esté completado, inserta la tarjeta SD en la Raspberry Pi conecta la alimentación, un monitor por medio del puerto HDMI, un teclado y un ratón. La Raspberry Pi debe arrancar desde la tarjeta SD y mostrar el instalador de Ubuntu Mate. Sigue las instrucciones en pantalla para completar la instalación de Ubuntu Mate en tu Raspberry Pi, asegurate de:
+* Recordar la contraseña que configuraste junto con el usuario.
+* Marcar la opción para que el sistema te solicite la contraseña en cada inicio de sesión.
+  
+**(Para continuar es indispensable dejar conectado el monitor, ratón y teclado, después del paso #2 ya no serán necesarios).**
 
-¡Y eso es todo! Con estos pasos, podrás instalar Ubuntu Mate 18.04 en tu Raspberry Pi desde Windows utilizando Raspberry Pi Imager.
+---
+## 2. Instalación el servidor de escritorio remoto Xrdp.
+Xrdp es un servidor de escritorio remoto de código abierto que permite a los usuarios conectarse a un escritorio de Linux desde un cliente remoto, como Microsoft Remote Desktop. En lugar de conectar una pantalla, un teclado y un ratón directamente a la Raspberry Pi, se puede utilizar un cliente de escritorio remoto en otro equipo, como una laptop o una computadora de escritorio, para conectarse a la Raspberry Pi y acceder a su escritorio.
 
---- 
+Esto puede ser muy conveniente en situaciones en las que la Raspberry Pi se encuentra en un lugar remoto o de difícil acceso, ya que se puede acceder a ella de forma remota sin necesidad de estar físicamente cerca de ella.
 
-## 2. INSTALACIÓN DE ROS.
-
-Al finalizar de instalar el S.O. veremos una pantalla como la siguiente:
+Al finalizar el asistente del S.O. veremos una pantalla como la siguiente:
 |![Escritorio Ubuntu Mate](imgs/UbuntuMateDesktop.png)|
 |:--:|
 | <b> Fig. 3 - Pantalla de inicio Ubuntu Mate. </b>|
@@ -72,6 +77,60 @@ Esto abrirá la terminal de MATE, también puedes abrir la terminal utilizando e
 |:--:|
 | <b> Fig. 4 - Terminal Ubuntu Mate. </b>|
 
+ Para instalar la herramienta copia y pega o escribe el siguiente comando (recuerda pulsar la tecla enter ↩️ al pegar cada uno de los comandos):
+```
+sudo apt install xrdp xorgxrdp -y
+```
+Antes de reiniciar asegurate de haber configurado una red WiFi en la cual **se encuentren conectados la raspberry y el ordenador** con el que desees conectarte por medio de escritorio remoto
+
+Ahora simplemente reinicia el sistema usando:
+```
+sudo shutdown -r now
+```
+Retira los periféricos, solo deja conectada la alimentación,  automáticamente la raspberry debe conectarse a la red WiFi configurada. Para conectarte hace falta saber la direccion IP de la placa: 
+1. Descarga Fing ([Android](https://play.google.com/store/apps/details?id=com.overlook.android.fing&hl=en&gl=US)/[IOS](https://apps.apple.com/us/app/fing-network-scanner/id430921107))
+
+|![Fing App logo](imgs/FingNT.webp)|
+|:--:|
+| <b> Fig. 5 - Aplicación Fing. </b>|
+
+2. Conectate a la misma red WiFi del ordenador y la placa, después abre la aplicación.
+
+|![Pantalla de inicio de la app](imgs/PantallaInicioApp.jpeg)|
+|:--:|
+| <b> Fig. 5 - Pantalla de Inicio Fing. </b>|    
+
+<br>
+
+3. Presiona "Ver dispositivos", al finalizar la aplicación te mostrará todos los dispositivos conectados a la red, sin embargo, nosotros buscaremos el nombre de nuestro dispositivo, e incluso la app lo clasifica automáticamente como Raspberry Pi.
+
+|![Dispositivos en red](imgs/RaspberryRed.jpeg)|
+|:--:|
+| <b> Fig. 5 - Resultado del escaneo. </b>|    
+
+4. Ya con la IP, en Windows haz clic en Inicio y busca "RDP", y abre el primer resultado
+
+|![Remote Desktop Connection](imgs/BusquedaRDP.png)|
+|:--:|
+| <b> Fig. 5 - Remote Desktop Connection Windows. </b>|   
+
+
+5. Ingresa la IP en el primer campo (en mi caso "192.168.101.3"), después da clic en "mostrar opciones".
+
+
+|![Alt text](imgs/ResultadoFinal.png)|
+|:--:|
+| <b> Fig. 5 - Ingresando dirección IP. </b>|    
+
+En la ficha de "Recursos Locales" busca teclado y cambia la opción de aplicar combinación de teclas de windows a **"En esta computadora"**
+|![Alt text](imgs/WinKey.png)|
+|:--:|
+| <b> Fig. 5 - Combinación de teclas. </b>|     
+
+6. Solo resta dar clic en conectar. Y listo, inicia sesión en Ubuntu, ingresa la contraseña y continua con los siguientes pasos. :D 
+---
+
+## 3. Instalación de ROS.
 Paso 0: Desinstalar herramientas preinstaladas.
 
 Cuando trabajamos con una Raspberry Pi 3+ con recursos limitados, puede ser necesario desinstalar las herramientas preinstaladas de Ubuntu Mate para liberar espacio en el disco y mejorar el rendimiento del sistema. Eliminaremos Libre Office con los siguientes comandos:
@@ -86,7 +145,6 @@ sudo apt-get autoremove
 ```
 Paso 1: Configurar el repositorio de ROS
 
-Copia y pega o escribe el siguiente comando para configurar los repositorios de ROS en tu sistema Ubuntu (recuerda pulsar la tecla Enter ↩️ al pegar cada uno de los comandos):
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 ```
