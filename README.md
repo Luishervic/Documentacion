@@ -71,7 +71,18 @@ Esto abrirá la terminal de MATE, también puedes abrir la terminal utilizando e
 |![Alt text](imgs/TerminalMate.png)|
 |:--:|
 | <b> Fig. 4 - Terminal Ubuntu Mate. </b>|
+Paso 0: Desinstalar herramientas preinstaladas.
 
+Cuando trabajamos con una Raspberry Pi 3+ con recursos limitados, puede ser necesario desinstalar las herramientas preinstaladas de Ubuntu Mate para liberar espacio en el disco y mejorar el rendimiento del sistema. Eliminaremos Libre Office con los siguientes comandos:
+```
+sudo apt-get remove --purge libreoffice*
+```
+```
+sudo apt clean
+```
+```
+sudo apt-get autoremove
+```
 Paso 1: Configurar el repositorio de ROS
 
 Copia y pega o escribe el siguiente comando para configurar los repositorios de ROS en tu sistema Ubuntu (recuerda pulsar la tecla Enter ↩️ al pegar cada uno de los comandos):
