@@ -5,12 +5,12 @@
   
 La Raspberry Pi 3+ es una computadora de bajo costo. Compatible con varios sistemas operativos diferentes, lo que la hace ideal para una gran variedad de proyectos y usos. Ubuntu Mate (arquitectura armhf) es una distribución de Linux basada en Ubuntu que está diseñada específicamente para dispositivos de baja potencia como la Raspberry Pi. Al ser una distribución de Linux, Ubuntu Mate es compatible con ROS y proporciona un entorno de programación estable y confiable para la programación de robots.
 
-Debido a las limitaciones del hardware se decidio instalar:
+Debido a las limitaciones del hardware se decidió instalar:
 
 * Ubuntu Mate 18.04. 
 * ROS Melodic Morenia (EOL: Mayo 2023). 
   
-Cabe mencionar que estas versiones **no son las ultimas disponibles** , si se requiere actualizar será necesario tambien remplazar la placa por la Raspberry Pi 4, la cual sin problemas soportaria la version actual (al momento de redactar este documento) de ROS (Noetic) o en su defecto ROS 2.
+Cabe mencionar que estas versiones **no son las ultimas disponibles** , si se requiere actualizar será necesario también reemplazar la placa por la Raspberry Pi 4, la cual sin problemas soporta la versión actual (al momento de redactar este documento) de ROS (Noetic) o en su defecto ROS 2.
 
 
 
@@ -45,7 +45,7 @@ Inserta la tarjeta SD en tu computadora y abre Raspberry Pi Imager. Haz clic en 
 
 **1.4 Configurar la Raspberry Pi:**
 
-Despues de finalizar el proceso anterior el programa te notificara cuando el proceso esté completado, inserta la tarjeta SD en la Raspberry Pi conecta la alimentación y a un monitor por medio del puerto HDMI. La Raspberry Pi debe arrancar desde la tarjeta SD y mostrar el instalador de Ubuntu Mate. Sigue las instrucciones en pantalla para completar la instalación de Ubuntu Mate en tu Raspberry Pi.
+Después de finalizar el proceso anterior el programa te notificará cuando el proceso esté completado, inserta la tarjeta SD en la Raspberry Pi conecta la alimentación y a un monitor por medio del puerto HDMI. La Raspberry Pi debe arrancar desde la tarjeta SD y mostrar el instalador de Ubuntu Mate. Sigue las instrucciones en pantalla para completar la instalación de Ubuntu Mate en tu Raspberry Pi.
 
 ¡Y eso es todo! Con estos pasos, podrás instalar Ubuntu Mate 18.04 en tu Raspberry Pi desde Windows utilizando Raspberry Pi Imager.
 
@@ -53,12 +53,12 @@ Despues de finalizar el proceso anterior el programa te notificara cuando el pro
 
 ## 2. INSTALACIÓN DE ROS.
 
-Despues de instalar el S.O. veremos una pantalla como la siguiente:
+Al finalizar de instalar el S.O. veremos una pantalla como la siguiente:
 |![Escritorio Ubuntu Mate](imgs/UbuntuMateDesktop.png)|
 |:--:|
 | <b> Fig. 3 - Pantalla de inicio Ubuntu Mate. </b>|
 
-Simplemente cierra la pantalla, lo demas lo trabajaremos con la terminal de Ubuntu Mate. La cual puedes abrir con los siguientes pasos:
+Simplemente cierra la pantalla, lo demás lo trabajaremos con la terminal de Ubuntu Mate. La cual puedes abrir con los siguientes pasos:
 
   1.  Haz clic en el botón "menú" ubicado en la esquina superior izquierda de la pantalla.
 
@@ -93,15 +93,15 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 Paso 4: Instalar ROS Melodic.
-Hay varios tipos de intalaciones por ejemplo:
+Hay varios tipos de instalaciones por ejemplo:
 
-- "Desktop-Full Install": Es la opción de instalación más completa de ROS Melodic, que incluye todos los paquetes disponibles en la distribución. Es adecuada para aquellos que necesitan acceso a una amplia variedad de paquetes y herramientas de ROS para su trabajo.
-<br>
-- "Desktop Install": Esta opción incluye los paquetes básicos necesarios para trabajar con ROS y algunos paquetes adicionales. Es una opción más ligera que la opción "Desktop-Full Install", pero aún así ofrece una buena cantidad de funcionalidad y herramientas para trabajar con ROS.
-<br>
-- "ROS-Base: (Bare Bones)": Esta opción es la instalación más ligera de ROS Melodic y solo incluye los paquetes esenciales necesarios para trabajar con ROS, como la comunicación básica entre nodos y la gestión de paquetes. Es adecuada si desea personalizar su instalación de ROS o si necesita una versión más liviana de ROS para un sistema con recursos limitados.
+* "Desktop-Full Install": Es la opción de instalación más completa de ROS Melodic, que incluye todos los paquetes disponibles en la distribución. Es adecuada para aquellos que necesitan acceso a una amplia variedad de paquetes y herramientas de ROS para su trabajo.
 
-No elegiremos ROS-Base ya que requerimos de usar Rviz para debuguear nuestra programación, por lo tanto, instalaremos la opcion Desktop Install la cual incluye esta utilidad y no instalaremos la opcion full debido a nuestros limitados recursos.
+* "Desktop Install": Esta opción incluye los paquetes básicos necesarios para trabajar con ROS y algunos paquetes adicionales. Es una opción más ligera que la opción "Desktop-Full Install", pero aún así ofrece una buena cantidad de funcionalidad y herramientas para trabajar con ROS.
+
+* "ROS-Base: (Bare Bones)": Esta opción es la instalación más ligera de ROS Melodic y solo incluye los paquetes esenciales necesarios para trabajar con ROS, como la comunicación básica entre nodos y la gestión de paquetes. Es adecuada si desea personalizar su instalación de ROS o si necesita una versión más liviana de ROS para un sistema con recursos limitados.
+
+No elegiremos ROS-Base ya que requerimos de usar Rviz para depurar nuestra programación, por lo tanto, instalaremos la opción "Desktop Install" la cual incluye esta utilidad y no instalaremos la full debido a nuestros limitados recursos.
 
 Ahora podemos instalar ROS Melodic nuestro sistema Ubuntu con el siguiente comando (esto puede tardar varios minutos):
 ```
