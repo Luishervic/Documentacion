@@ -184,7 +184,7 @@ Para utilizar ROS Melodic, es necesario configurar el entorno. Para hacerlo, esc
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
-Paso 7: Instalar las dependencias para contruir paquetes.
+Paso 6: Instalar las dependencias para contruir paquetes.
 
 ```
 sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
@@ -196,7 +196,7 @@ sudo rosdep init
 rosdep update
 ```
 
-Paso 6: Verificar la instalación
+Paso 7: Verificar la instalación
 
 Para verificar que ROS Melodic se ha instalado correctamente, escriba el siguiente comando en la terminal:
 ```
