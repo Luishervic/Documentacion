@@ -18,9 +18,10 @@ Cabe mencionar que estas versiones **no son las ultimas disponibles** , si se re
 ---
 ## 1. Instalación de Ubuntu Mate 18.04.
 Materiales necesarios:
-* Memoria SD (min. 16 GB).
+* Memoria SD (mín. 16 GB).
 * Computadora.
 * Cable HDMI.
+* Teclado y ratón (USB).
       
 
 **1.1 Descargar la imagen de Ubuntu Mate 18.04 para Raspberry Pi:**
