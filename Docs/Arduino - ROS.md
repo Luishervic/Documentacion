@@ -47,11 +47,19 @@ Esto mostrará una lista de todos los dispositivos de puerto serie disponibles e
 * Ahora que has identificado el nombre del puerto en el que está conectado el Arduino, puedes usar ese nombre para el siguiente paso.
 
 ---
+## 4. Agregar permisos.
+Agregamos los permisos para poder acceder a los puertos USB:
+```
+sudo usermod -a -G dialout tu_usuario
+```
 
-## 4. Prueba de comunicación
+
+## 4. Prueba de comunicación.
+Una vez realizado lo anterior, podemos solicitar el topico al arduino con la siguiente linea de comando:
 ```
 rosrun rosserial_python serial_node.py "puerto"
 ```
+La terminal mostrará si se ha establecido comunicación con el Arduino y qué tipo de mensaje se está recibiendo de éste.
 
 Para escuchar el topico publicado:
 ```
