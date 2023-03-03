@@ -54,7 +54,7 @@ sudo usermod -a -G dialout tu_usuario
 ```
 
 
-## 4. Prueba de comunicación.
+## 5. Prueba de comunicación.
 Una vez realizado lo anterior, podemos solicitar el topico al arduino con la siguiente linea de comando:
 ```
 rosrun rosserial_python serial_node.py "puerto"
