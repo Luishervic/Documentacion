@@ -24,6 +24,9 @@ Una vez que la instalación haya finalizado, puedes cerrar la ventana del Admini
 
 ```
 sudo apt-get install ros-melodic-rosserial
+```
+
+```
 sudo apt-get install ros-melodic-rosserial-arduino
 ```
 ---
@@ -40,7 +43,7 @@ ls /dev/tty*
 ```
 ---
 
-Esto mostrará una lista de todos los dispositivos de puerto serie disponibles en tu sistema, incluyendo los puertos a los que está conectado el Arduino.
+Esto mostrará una lista de todos los dispositivos de puerto serie disponibles en tu sistema, incluyendo el puertos al  que está conectado el Arduino.
 
 * Busca el nombre del puerto en la lista que se muestra. Por lo general, el puerto que usa el Arduino suele tener un nombre similar a "/dev/ttyACM0" o "/dev/ttyUSB0". Si tienes más de un dispositivo conectado a tu computadora, es posible que debas desconectar los otros dispositivos para determinar qué puerto está utilizando el Arduino.
 

@@ -27,7 +27,7 @@ Materiales necesarios:
 **1.1 Descargar la imagen de Ubuntu Mate 18.04 para Raspberry Pi:**
 
 
-Dirígete al siguiente [link](https://drive.google.com/file/d/1qFFEFnqsYafqdGg73xRoJ2rVE1n13Yh0/view?usp=share_link) de Google Drive que te te va a redirigir a donde se aloja la imagen de Ubuntu Mate y descarga la imagen.
+Dirígete al siguiente [link](https://drive.google.com/file/d/1qFFEFnqsYafqdGg73xRoJ2rVE1n13Yh0/view?usp=share_link) de Google Drive que te va a redirigir a donde se aloja la imagen de Ubuntu Mate y descarga la imagen.
 
 **1.2 Descargar e instalar Raspberry Pi Imager:**
 
@@ -161,6 +161,8 @@ Antes de instalar ROS, es importante asegurarse de que el sistema Ubuntu esté a
 
 ```
 sudo apt-get update
+```
+```
 sudo apt-get upgrade
 ```
 Paso 4: Instalar ROS Melodic.
@@ -183,10 +185,11 @@ Paso 5: Configurar el entorno de ROS
 Para utilizar ROS Melodic, es necesario configurar el entorno. Para hacerlo, escribe el siguiente comando en la terminal para agregar las variables de entorno de ROS al archivo .bashrc:
 ```
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+```
+```
 source ~/.bashrc
 ```
 Paso 6: Instalar las dependencias para contruir paquetes.
-
 ```
 sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
 ```
