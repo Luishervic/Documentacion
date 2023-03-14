@@ -34,22 +34,33 @@ sudo raspi-config
 ```
 git clone https://github.com/JorgeMaker/SimpleFOCStudio.git
 ```
-2. Cambia de directorio.
+2. Edita el archivo "requirements.txt", reemplazando su contenido con el siguiente:
+```
+PyQt5==5.15.2
+pyqtgraph==0.11.1
+pyserial==3.5
+numpy
+```
+3. Cambia de directorio.
 
 ```
 cd SimpleFOCStudio/
 ```
-3. Instala todos los paquetes necesarios.
+4. Instala la utilidad pip.
 
+```
+sudo apt install python-pip
+```
+5. Instala los paquetes necesarios.
 ```
 pip install -r "requirements.txt"
 ```
-4. Ahora reinicia la Raspberry.
+6. Ahora reinicia la Raspberry.
 
 ```
 sudo shutdown -r now
 ```
-5. ¡Listo! al iniciar de nuevo, solo cambia de directorio usando la instrucción 2 para después usar el siguiente comando:
+7. ¡Listo! al iniciar de nuevo, solo cambia de directorio usando la instrucción 2 para después usar el siguiente comando:
 
 ```
 python3 simpleFOCStudio.py
